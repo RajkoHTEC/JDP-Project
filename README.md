@@ -6,3 +6,5 @@ launch modes:
 - single top
 - single task
 - single instance
+
+[How to check activity stack from terminal](https://stackoverflow.com/questions/4387875/view-activity-stack-in-android)
