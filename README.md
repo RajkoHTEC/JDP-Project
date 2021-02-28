@@ -1,2 +1,8 @@
 # JDP-Project
-A project through which I am learning to become a junior developer
+An app for testing backstack and launch modes. It also shows the number of stack in the title.
+
+launch modes:
+    -standard
+    -single top
+    -single task
+    -single instance
