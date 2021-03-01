@@ -28,6 +28,9 @@ abstract class BaseActivity(private val TAG: String) : AppCompatActivity() {
         findViewById<Button>(R.id.btnSingleInstanceActivity).setOnClickListener {
             startActivity(Intent(this@BaseActivity, SingleInstanceActivity::class.java))
         }
+        findViewById<Button>(R.id.btnSingleInstanceWithAffinityActivity).setOnClickListener {
+            startActivity(Intent(this@BaseActivity, SingleInstanceWithAffinity::class.java))
+        }
 
         Log.d(TAG, "onCreate: ")
     }

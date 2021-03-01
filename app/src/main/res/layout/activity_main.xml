@@ -31,4 +31,10 @@
         android:layout_height="wrap_content"
         android:text="Start SingleInstanceActivity"
         android:paddingVertical="8dp"/>
+    <Button
+        android:id="@+id/btnSingleInstanceWithAffinityActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start SingleInstanceWithAffinityActivity"
+        android:paddingVertical="8dp"/>
 </LinearLayout>

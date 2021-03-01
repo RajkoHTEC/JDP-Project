@@ -6,5 +6,6 @@ launch modes:
 - single top
 - single task
 - single instance
+- single instance on new affinity
 
 [How to check activity stack from terminal](https://stackoverflow.com/questions/4387875/view-activity-stack-in-android)

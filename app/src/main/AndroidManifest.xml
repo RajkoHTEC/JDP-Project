@@ -19,5 +19,6 @@
         <activity android:name=".SingleTopActivity" android:launchMode="singleTop"/>
         <activity android:name=".SingleTaskActivity" android:launchMode="singleTask"/>
         <activity android:name=".SingleInstanceActivity" android:launchMode="singleInstance"/>
+        <activity android:name=".SingleInstanceWithAffinity" android:launchMode="singleInstance" android:taskAffinity="SingleInstance.container"/>
     </application>
 </manifest>
