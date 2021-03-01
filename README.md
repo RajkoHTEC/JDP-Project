@@ -1,2 +1,3 @@
 # JDP-Project
-A project through which I am learning to become a junior developer
+An app for testing fragments.
+-Creating fragments with AndroidX Fragment library (static and dynamic)
