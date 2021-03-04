@@ -35,5 +35,8 @@
             app:showAsAction="never"
             android:checked="true"/>
     </group>
-
+    <item
+        android:id="@+id/action_startNewActivity"
+        android:title="New activity"
+        app:showAsAction="never"/>
 </menu>

@@ -1,5 +1,6 @@
 package com.htec.jdp
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -57,7 +58,12 @@ class MainActivity : AppCompatActivity() {
             R.id.action_setBlueColor -> {item.isChecked = true; setSelectableColor(Color.BLUE);  return true}
             R.id.action_setRedColor -> {item.isChecked = true; setSelectableColor(Color.RED); return true}
             R.id.action_setYellowColor -> {item.isChecked = true; setSelectableColor(Color.YELLOW); return true}
+            R.id.action_startNewActivity -> {startNextActivity();  return true;}
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun startNextActivity() {
+        startActivity(Intent(this, CustomToolbarActivity::class.java))
     }
 }
