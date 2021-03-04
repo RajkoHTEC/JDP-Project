@@ -2,11 +2,11 @@ package com.htec.jdp
 
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.htec.jdp.LoremIpsum.Companion.setSelectableColor
 
@@ -28,11 +28,15 @@ class MainActivity : AppCompatActivity() {
 
         val searchItem = menu?.findItem(R.id.action_search)
         val searchView = searchItem?.actionView as SearchView
+        val refreshItem = menu?.findItem(R.id.action_refresh)
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                if(query != null) {
-                    textView.text = LoremIpsum.getSelected(query, if(shouldOverrideSelectedText) textView.text.toString() else textView.text)
+                if (query != null) {
+                    textView.text = LoremIpsum.getSelected(
+                        query,
+                        if (shouldOverrideSelectedText) textView.text.toString() else textView.text
+                    )
                     searchView.clearFocus()
                 } else {
                     textView.text = LoremIpsum.getText()
@@ -45,6 +49,20 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        searchItem.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
+            override fun onMenuItemActionExpand(item: MenuItem?): Boolean {
+                item!!.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS or MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW)
+                refreshItem!!.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS or MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW)
+                return true
+            }
+
+            override fun onMenuItemActionCollapse(item: MenuItem?): Boolean {
+                invalidateOptionsMenu();
+                return true
+            }
+        })
+
+
         return true
     }
 
@@ -54,11 +72,22 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         when(item.itemId) {
-            R.id.action_override_color -> {shouldOverrideSelectedText = !shouldOverrideSelectedText; item.isChecked = shouldOverrideSelectedText; return true}
-            R.id.action_setBlueColor -> {item.isChecked = true; setSelectableColor(Color.BLUE);  return true}
-            R.id.action_setRedColor -> {item.isChecked = true; setSelectableColor(Color.RED); return true}
-            R.id.action_setYellowColor -> {item.isChecked = true; setSelectableColor(Color.YELLOW); return true}
-            R.id.action_startNewActivity -> {startNextActivity();  return true;}
+            R.id.action_override_color -> {
+                shouldOverrideSelectedText = !shouldOverrideSelectedText; item.isChecked =
+                    shouldOverrideSelectedText; return true
+            }
+            R.id.action_setBlueColor -> {
+                item.isChecked = true; setSelectableColor(Color.BLUE); return true
+            }
+            R.id.action_setRedColor -> {
+                item.isChecked = true; setSelectableColor(Color.RED); return true
+            }
+            R.id.action_setYellowColor -> {
+                item.isChecked = true; setSelectableColor(Color.YELLOW); return true
+            }
+            R.id.action_startNewActivity -> {
+                startNextActivity(); return true;
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -66,4 +95,6 @@ class MainActivity : AppCompatActivity() {
     private fun startNextActivity() {
         startActivity(Intent(this, CustomToolbarActivity::class.java))
     }
+
+
 }
