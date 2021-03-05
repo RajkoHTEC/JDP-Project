@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), IDialogResponse{
     private lateinit var linearLayout: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +24,18 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnShowDialogFragment).setOnClickListener { ExampleDialogFragment().show(supportFragmentManager, "")}
         findViewById<Button>(R.id.btnShowDialogFragmentWithList).setOnClickListener { ExampleListDialogFragment().show(supportFragmentManager, "") }
         findViewById<Button>(R.id.btnShowBottomSheetDialog).setOnClickListener { showOptionsBottomSheetDialog() }
+        findViewById<Button>(R.id.btnShowCustomDialog).setOnClickListener { showCustomDialog()}
+        findViewById<Button>(R.id.btnShowCustomDialogFragment).setOnClickListener{ showCustomDialogFragment()}
+    }
+
+    private fun showCustomDialogFragment() {
+        supportFragmentManager.let {
+            CustomDialogFragment().show(it, "")
+        }
+    }
+
+    private fun showCustomDialog() {
+        CustomDialog(this).show()
     }
 
     private fun showOptionsBottomSheetDialog() {
@@ -58,5 +70,17 @@ class MainActivity : AppCompatActivity() {
             view = layout
             show()
         }*/
+    }
+
+    override fun onDialogSubmit(username: String, password: String) {
+        if(username == "milan" && password == "123") {
+            Toast.makeText(applicationContext, "Login Succ", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(applicationContext, "Login fail", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDialogCancel() {
+
     }
 }

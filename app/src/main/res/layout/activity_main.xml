@@ -45,5 +45,15 @@
         android:layout_height="wrap_content"
         android:text="Show option bottom sheet dialog"
         android:paddingVertical="8dp"/>
+    <Button
+        android:id="@+id/btnShowCustomDialog"
+        android:layout_width="match_parent"
+        android:text="Show Custom Dialog"
+        android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/btnShowCustomDialogFragment"
+        android:layout_width="match_parent"
+        android:text="Show Custom Dialog Fragment"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
