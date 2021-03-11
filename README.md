@@ -10,3 +10,4 @@ My junior developer journey path:
 1. [Navigation drawer and bottom navigation](https://github.com/RajkoHTEC/JDP-Project/tree/navigation_drawer_material)
 1. [Toolbar (Search and menu options)](https://github.com/RajkoHTEC/JDP-Project/tree/toolbar)
 1. [Broadcast](https://github.com/RajkoHTEC/JDP-Project/tree/broadcast)
+1. [Permissions](https://github.com/RajkoHTEC/JDP-Project/tree/permissions)
