@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
 
                    )
                    findViewById<ImageView>(R.id.ivShowImage).setImageBitmap(thumbnail)
-                   currentImage = (currentImage +1 % imagesList.size)
+                   currentImage = ((currentImage +1) % imagesList.size)
 
                }
            }
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val collection = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_INTERNAL)
+            MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY)
         } else {
             MediaStore.Images.Media.INTERNAL_CONTENT_URI
         }
