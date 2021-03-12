@@ -1,2 +1,5 @@
 # JDP-Project
-A project through which I am learning to become a junior developer
+Working with Files:
+- App specific: internal and external
+- Shared files
+- SharedPreference
