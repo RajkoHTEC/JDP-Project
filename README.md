@@ -11,3 +11,4 @@ My junior developer journey path:
 1. [Toolbar (Search and menu options)](https://github.com/RajkoHTEC/JDP-Project/tree/toolbar)
 1. [Broadcast](https://github.com/RajkoHTEC/JDP-Project/tree/broadcast)
 1. [Permissions](https://github.com/RajkoHTEC/JDP-Project/tree/permissions)
+1. [Storage](https://github.com/RajkoHTEC/JDP-Project/tree/storage)
