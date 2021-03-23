@@ -13,3 +13,4 @@ My junior developer journey path:
 1. [Permissions](https://github.com/RajkoHTEC/JDP-Project/tree/permissions)
 1. [Storage](https://github.com/RajkoHTEC/JDP-Project/tree/storage)
 1. [Handler, Threads & AsyncTask](https://github.com/RajkoHTEC/JDP-Project/tree/threads)
+1. [Retrofit RXJava3](https://github.com/RajkoHTEC/JDP-Project/tree/retrofit)
